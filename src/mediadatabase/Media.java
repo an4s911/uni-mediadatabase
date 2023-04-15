@@ -5,6 +5,14 @@ abstract class Media {
     private int year; // year it was released
     private String category; // genre
 
+    public Media(String type, String title, String location, int year, String category) {
+        this.type = type;
+        this.title = title;
+        this.location = location;
+        this.year = year;
+        this.category = category;
+    }
+
     public void setType(String type) {
         this.type = type;
     }
