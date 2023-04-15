@@ -8,4 +8,8 @@ class Movie extends Media {
         this.playingTime = playingTime;
     }
 
+    public String toString() {
+        return "Movie{" + super.toString() + ", director=" + director + ", playingTime=" + playingTime + "}";
+    }
+
 }

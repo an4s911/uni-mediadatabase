@@ -8,4 +8,8 @@ class Music extends Media {
         this.numberOfSongs = numberOfSongs;
     }
 
+    public String toString() {
+        return "Music{" + super.toString() + ", artist = " + artist + ", numberOfSongs = " + numberOfSongs + "}";
+    }
+
 }

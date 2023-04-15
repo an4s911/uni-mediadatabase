@@ -56,7 +56,7 @@ abstract class Media {
     public abstract void playMedia();
 
     public String toString() {
-        return "Media{type = " + type + ", title = " + title + ", location = " + location + ", year = " + year
-                + ", category = " + category + "}";
+        return "type = " + type + ", title = " + title + ", location = " + location + ", year = " + year
+                + ", category = " + category;
     }
 }
