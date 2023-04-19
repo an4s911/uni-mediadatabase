@@ -92,19 +92,38 @@ public class MDConsoleIO {
 
         // Request Media type
         System.out.println("Enter media type (music/movie):");
-        String type = scIn.nextLine();
-        if (type.equals("")) {
+        String type = scIn.nextLine().toLowerCase();
+        if (type.equals("") || (!type.equals("movie") && !type.equals("music"))) {
             return;
         }
 
+        System.out.println("Enter title: ");
+        String title = scIn.nextLine();
+        System.out.println("Enter location: ");
+        String location = scIn.nextLine();
+        System.out.println("Enter year: ");
+        int year = scIn.nextInt();
+        scIn.nextLine(); // dump \n
+        System.out.println("Enter category: ");
+        String category = scIn.nextLine();
+
         if (type.equals("music")) {
-            ;
-            // read all info for a music media object
-            // use a method
+            System.out.println("Enter artist: ");
+            String artist = scIn.nextLine();
+            System.out.println("Enter number of songs: ");
+            int numberOfSongs = scIn.nextInt();
+
+            theDatabase.addEntry(new Music(title, location, year, category, artist, numberOfSongs));
+        } else if (type.equals("movie")) {
+            System.out.println("Enter director: ");
+            String director = scIn.nextLine();
+            System.out.println("Enter playing time: ");
+            int playingTime = scIn.nextInt();
+
+            theDatabase.addEntry(new Movie(title, location, year, category, director, playingTime));
+        } else {
+            System.out.println("Invalid type input!");
         }
-
-        // complete the rest
-
     }
 
     /**
@@ -170,7 +189,7 @@ public class MDConsoleIO {
         // Request the type.
         System.out.println("Enter media type (music/movie/audiobook)");
         String type = scIn.nextLine();
-        if (type.equals("")) {
+        if (type.equals("") || (!type.equals("movie") && !type.equals("music"))) {
             return;
         }
         // validate type here
